@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Gridea</title>
+<title>&#34;mmath.h&#34; | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,14 +12,25 @@
 <link rel="stylesheet" href="https://fanwujiu.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="&lt;code&gt;范无咎的个人博客&lt;/code&gt;">
-    
+    <meta name="description" content="&quot;mmath.h&quot;
+/*
+[More Math Algorithms To Highers]
+Code by izumi@Uchiha Dev Team
+Uchiha Dev Team (c) 2020
+E-mail: ..." />
+    <meta name="keywords" content="source-cpp" />
   </head>
   <body>
     <div id="app" class="main">
@@ -89,17 +100,12 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://fanwujiu.github.io/post/mmath-h/">
-                  <h2 class="post-title">&#34;mmath.h&#34;</h2>
-                </a>
-                <div class="post-date">
-                  2020-08-18
-                </div>
-                <div class="post-abstract">
-                  <h1 id="mmathh">&quot;mmath.h&quot;</h1>
+          <div class="post-detail">
+            <h2 class="post-title">&#34;mmath.h&#34;</h2>
+            <div class="post-date">2020-08-18</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="mmathh">&quot;mmath.h&quot;</h1>
 <pre><code class="language-cpp">/*
 [More Math Algorithms To Highers]
 Code by izumi@Uchiha Dev Team
@@ -426,39 +432,38 @@ struct str_frac
 
 #endif
 </code></pre>
+<!-- more -->
 
-                </div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://fanwujiu.github.io/tag/9hyafVghS/" class="tag">
+                    source-cpp
+                  </a>
+                
               </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
                 <a href="https://fanwujiu.github.io/post/hello-gridea/">
-                  <h2 class="post-title">Hello Gridea</h2>
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
                 </a>
-                <div class="post-date">
-                  2018-12-12
-                </div>
-                <div class="post-abstract">
-                  <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-                </div>
               </div>
-              
-                <a class="right" href="https://fanwujiu.github.io/post/hello-gridea/">
-                  <div class="feature-container" style="background-image: url('https://fanwujiu.github.io/post-images/hello-gridea.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -479,6 +484,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
