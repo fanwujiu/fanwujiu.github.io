@@ -117,7 +117,7 @@ E-mail:..." />
                   
                 <li><a href="https://fanwujiu.github.io/friends" style="color:white">友链</a></li>
                 
-                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1598185477941" alt=""
+                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1598188040033" alt=""
                 class="menutopavatar"></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -301,7 +301,7 @@ E-mail:..." />
             </div>
             <div class="postinfo-detail">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-08-18</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 8 min read</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 min read</div>
             <div class="posttag">
                 
                 <a href="https://fanwujiu.github.io/9hyafVghS/" class="postlink">
@@ -332,6 +332,13 @@ Code by izumi@Uchiha Dev Team
 Uchiha Dev Team (c) 2020
 E-mail: 2335979273@qq.com
 */
+/*
+Must run at Windows 2010 or Windows 2007, cpp, cpp11 or cpp17
+[More Math Algorithms To Highers]
+Code by izumi@Uchiha Dev Team
+Uchiha Dev Team (c) 2020
+E-mail: 2335979273@qq.com
+*/
 #ifndef MMATH
 #define MMATH
 
@@ -340,7 +347,7 @@ E-mail: 2335979273@qq.com
 #include &lt;string&gt;
 
 using std::string;
-using std::ostream;
+
 int min (int a, int b) //最小值 
 {
 	return a &lt; b ? a : b;
@@ -382,6 +389,25 @@ struct frac
 		int temp = gcd (numerator, denominator);
 		numerator /= temp;
 		denominator /= temp;
+		if (numerator * denominator &gt; 0) 
+		{
+			numerator = -numerator;
+			denominator = -denominator;
+			return 1;
+		}
+		else if (numerator &lt; 0 || denominator &lt; 0)
+		{
+			denominator = abs (denominator);
+			numerator = -abs (numerator);
+			return 1;
+		}
+		else if (denominator == 0) 
+		{
+			numerator = 0;
+			denominator = 1;
+			return -1;
+		}
+		return 1;
 	}
 	int operator = (string c) //初始化分数 （例：frac a = &quot;1/2&quot;;） 
 	{
@@ -393,6 +419,11 @@ struct frac
 		denominator = y;
 		return 1;
 	}
+	double value (int bits)
+	{
+		double ans = numerator / denominator;
+		return ans;
+	} 
 	frac ()
 	{
 		numerator = 0;
@@ -453,6 +484,8 @@ frac operator ^ (frac n, int k)
 Code by itachi@Uchiha Dev Team
 Uchiha Dev Team (c) 2020
 E-mail: 2335979273@qq.com
+Blog: fanwujiu.github.io
+Github: fanwujiu
 */
 string plus (string a, string b) //字符串加法 
 {
@@ -562,12 +595,6 @@ string div (string a, string b) //字符串整除
     }
     return ans;
 }
-int operator /= (string a, string b)
-{
-	string ans = div (a, b);
-	a = ans;
-	return 1;
-}
 string mod (string a, string b) //字符串取余 
 {
     string ans;
@@ -602,7 +629,7 @@ string sabs (string x) //字符串绝对值
     if (x[0] == '-') x[0] = 0;
     return x;
 }
-int null (string x) //字符串是否为空 
+int isnull (string x) //字符串是否为空 
 {
     int i = 0;
     while (i++) if (x[i] != '0') return 1;
@@ -611,7 +638,7 @@ int null (string x) //字符串是否为空
 string sgcd (string n, string k) //字符串最大公约数 
 {
     string t;
-    while (!null (k))   
+    while (!isnull (k))   
     {
         t = n; n = k; k = mod (t, k);  
     }
@@ -621,6 +648,42 @@ string slcm (string a, string b) //字符串最小公倍数
 {
     return div (times (a, b), sgcd (a, b));
 } 
+int operator += (string &amp;a, string b)
+{
+	string ans = plus (a, b);
+	a = ans;
+	return 1;
+}
+int operator -= (string &amp;a, string b)
+{
+	string ans = minus (a, b);
+	a = ans;
+	return 1;
+}
+int operator *= (string &amp;a, string b)
+{
+	string ans = times (a, b);
+	a = ans;
+	return 1;
+}
+int operator /= (string &amp;a, string b)
+{
+	string ans = div (a, b);
+	a = ans;
+	return 1;
+}
+int operator %= (string &amp;a, string b)
+{
+	string ans = mod (a, b);
+	a = ans;
+	return 1;
+}
+int operator ^= (string &amp;a, string b)
+{
+	string ans = spow (a, b);
+	a = ans;
+	return 1;
+}
 //字符串分数结构体 
 struct str_frac
 {
@@ -878,7 +941,7 @@ struct str_frac
             </div>
             <div class="postinfo-detail">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-08-18</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 8 min read</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 9 min read</div>
             <div class="posttag">
                 
                 <a href="https://fanwujiu.github.io/9hyafVghS/" class="postlink">
@@ -909,6 +972,13 @@ Code by izumi@Uchiha Dev Team
 Uchiha Dev Team (c) 2020
 E-mail: 2335979273@qq.com
 */
+/*
+Must run at Windows 2010 or Windows 2007, cpp, cpp11 or cpp17
+[More Math Algorithms To Highers]
+Code by izumi@Uchiha Dev Team
+Uchiha Dev Team (c) 2020
+E-mail: 2335979273@qq.com
+*/
 #ifndef MMATH
 #define MMATH
 
@@ -917,7 +987,7 @@ E-mail: 2335979273@qq.com
 #include &lt;string&gt;
 
 using std::string;
-using std::ostream;
+
 int min (int a, int b) //最小值 
 {
 	return a &lt; b ? a : b;
@@ -959,6 +1029,25 @@ struct frac
 		int temp = gcd (numerator, denominator);
 		numerator /= temp;
 		denominator /= temp;
+		if (numerator * denominator &gt; 0) 
+		{
+			numerator = -numerator;
+			denominator = -denominator;
+			return 1;
+		}
+		else if (numerator &lt; 0 || denominator &lt; 0)
+		{
+			denominator = abs (denominator);
+			numerator = -abs (numerator);
+			return 1;
+		}
+		else if (denominator == 0) 
+		{
+			numerator = 0;
+			denominator = 1;
+			return -1;
+		}
+		return 1;
 	}
 	int operator = (string c) //初始化分数 （例：frac a = &quot;1/2&quot;;） 
 	{
@@ -970,6 +1059,11 @@ struct frac
 		denominator = y;
 		return 1;
 	}
+	double value (int bits)
+	{
+		double ans = numerator / denominator;
+		return ans;
+	} 
 	frac ()
 	{
 		numerator = 0;
@@ -1030,6 +1124,8 @@ frac operator ^ (frac n, int k)
 Code by itachi@Uchiha Dev Team
 Uchiha Dev Team (c) 2020
 E-mail: 2335979273@qq.com
+Blog: fanwujiu.github.io
+Github: fanwujiu
 */
 string plus (string a, string b) //字符串加法 
 {
@@ -1139,12 +1235,6 @@ string div (string a, string b) //字符串整除
     }
     return ans;
 }
-int operator /= (string a, string b)
-{
-	string ans = div (a, b);
-	a = ans;
-	return 1;
-}
 string mod (string a, string b) //字符串取余 
 {
     string ans;
@@ -1179,7 +1269,7 @@ string sabs (string x) //字符串绝对值
     if (x[0] == '-') x[0] = 0;
     return x;
 }
-int null (string x) //字符串是否为空 
+int isnull (string x) //字符串是否为空 
 {
     int i = 0;
     while (i++) if (x[i] != '0') return 1;
@@ -1188,7 +1278,7 @@ int null (string x) //字符串是否为空
 string sgcd (string n, string k) //字符串最大公约数 
 {
     string t;
-    while (!null (k))   
+    while (!isnull (k))   
     {
         t = n; n = k; k = mod (t, k);  
     }
@@ -1198,6 +1288,42 @@ string slcm (string a, string b) //字符串最小公倍数
 {
     return div (times (a, b), sgcd (a, b));
 } 
+int operator += (string &amp;a, string b)
+{
+	string ans = plus (a, b);
+	a = ans;
+	return 1;
+}
+int operator -= (string &amp;a, string b)
+{
+	string ans = minus (a, b);
+	a = ans;
+	return 1;
+}
+int operator *= (string &amp;a, string b)
+{
+	string ans = times (a, b);
+	a = ans;
+	return 1;
+}
+int operator /= (string &amp;a, string b)
+{
+	string ans = div (a, b);
+	a = ans;
+	return 1;
+}
+int operator %= (string &amp;a, string b)
+{
+	string ans = mod (a, b);
+	a = ans;
+	return 1;
+}
+int operator ^= (string &amp;a, string b)
+{
+	string ans = spow (a, b);
+	a = ans;
+	return 1;
+}
 //字符串分数结构体 
 struct str_frac
 {
