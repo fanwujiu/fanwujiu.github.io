@@ -9,7 +9,7 @@ text
     <link rel="stylesheet" href="https://fanwujiu.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fanwujiu.github.io/styles/main.css">
     
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/dracula.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
     
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
     <script src="https://fanwujiu.github.io/media/js/clipboard.min.js"></script>
@@ -19,16 +19,42 @@ text
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
     <!-- 数学公式 -->
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css"
+        integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"
+        integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"
+        integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous">
+    </script>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                    left: "$$",
+                    right: "$$",
+                    display: true
+                },
+                {
+                    left: "$",
+                    right: "$",
+                    display: false
+                }
+            ]
+        });
+    </script>
+
+    
     <title>日神社</title>
     
     <style>
         .markdownIt-TOC {
+            margin-left: 28%;
             padding-left: 2px;
-            width: 100%;
+            width: 80%;
         }
 
         .markdownIt-TOC li {
-            padding-left: 2%;
+            padding-left: 8%;
         }
     </style>
     
@@ -39,7 +65,7 @@ text
         <div class="message" style="opacity:0"></div>
         <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
     </div>
-    <div id="codeCopyText" style="display: none"></div>
+    <div id="codeCopyText" style="display: none">代码复制成功了哦</div>
     <div id="domainname" style="display:none">https://fanwujiu.github.io</div>
     <!-- 响应式布局，针对PC端内容显示 -->
     <div id="content">
@@ -47,6 +73,97 @@ text
             <div class="row">
                 <div class="side"><body>
     
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://fanwujiu.github.io/images/avatar.png?v=1598183394603" class="avatar">
+        </div>
+        <div class="sitename">日神社</div>
+        <span class="describtion" data-text='["                 やたきの居"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        <a onclick="showqq()"><i style="font-size: 20px;"><img class="icon" src="https://fanwujiu.github.io/media/images/QQ.png" alt=""></i></a>
+        
+        
+        
+        
+        <a href="AR071113" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://fanwujiu.github.io/media/images/wechat.png" alt=""></i></a>
+        
+        
+    </div>
+    <div id="qq" style="display:none">2335909273</div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://fanwujiu.github.io" class="menubutton">
+            首页
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/archives" class="menubutton">
+            归档
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://fanwujiu.github.io/talk" class="menubutton">说说</a>
+    </div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://fanwujiu.github.io/friends" class="menubutton">友人帐</a>
+    </div>
+    
+    <hr>
+    <div id="footinfo">范无咎的个人博客 | Theme: <a
+        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div id="vistornum">
+        <span id="busuanzi_container_site_uv">
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> 总访问量:<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-user-o" aria-hidden="true"></i> 访问人数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+    </div>
+    <div style="color:white"></div>
+    
+    </div>
+
+
+<script src="https://fanwujiu.github.io/media/js/wordshow.js"></script>
+    
+
 
 
 
@@ -184,8 +301,16 @@ text
 </script>
 </div>
                 
-            <div id="main" class="col-xs-12 col-sm-7" style="width:50%;margin-top:50px;left:27%">
-                <link rel="stylesheet" href="https://fanwujiu.github.io/media/css/font-awesome.css">
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://fanwujiu.github.io/media/css/font-awesome.css">
 
 <body>
     <div class="allcontent" id="postdetail">
@@ -224,10 +349,39 @@ text</p>
             </div>
             <hr style="width: 80%;">
             
+            <div class="sharebtnContainer">
+                <button type="button" class="sharebtn">转载分享</button>
+            </div>
+            <div class="shareContainer">
+                <div class="share" style="height:30px;background: white;">
+                    <a class="qq" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/QQ.png" alt=""></i></a>
+                    <a class="wechat" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/wechat.png" alt=""></i></a>
+                    <a class="weibo" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/weibo.png" alt=""></i></a>
+                    <a class="qzone" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/qzone.png" alt=""></i></a>
+                                <a class="douban" href=""><i><img class="shareicon"
+                                    src="https://fanwujiu.github.io/media/images/douban.png" alt=""></i></a>
+                                <a class="facebook" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/facebook.png" alt=""></i></a>
+                    <a class="twitter" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/twitter.png" alt=""></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="donateContainer">
+                <img src="https://fanwujiu.github.io/media/images/donate.png" alt="" class="donateImg">
+            </div>
+            <div class="donateContainer">
+                <img src="" alt="" class="donate">
+            </div>
             
             <div class="postfooter">
                 <ul class="post-copyright">
-                    <li><strong>文章作者：</strong></li>
+                    <li><strong>文章作者：</strong>范无咎@luogu.com.cn</li>
             <li><strong>原文链接：</strong>https://fanwujiu.github.io/text/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
@@ -257,12 +411,12 @@ text</p>
     pl = pl.replace(rootaddr, "");
     $("#hotnum").attr('id', pl);
 </script>
-            </div>
-            <div id="comment" style="background: white">
-                <div class="commentcontainer">
-                    
-                    
-                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                </div>
+                <div id="comment" style="background: white">
+                    <div class="commentcontainer">
+                        
+                        
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <div id="gitalk-container"></div>
@@ -283,14 +437,13 @@ text</p>
 
 </script>
 
-                    
-                    
-                    
+                        
+                        
+                        
+                    </div>
                 </div>
             </div>
             
-        </div>
-        
         <div class="toc-container">
             
         </div>
@@ -303,9 +456,9 @@ text</p>
     </div>
     <div id="bg">
     </div>
-    <div id="bgchoice" style="display: none"></div>
+    <div id="bgchoice" style="display: none">link</div>
     
-    <div id="bgurl" style="display:none"></div>
+    <div id="bgurl" style="display:none">http://m.qpic.cn/psc?/V53gk0LW3YdwOX0Fqn7C3KL19r2miaCr/ruAMsa53pVQWN7FLK88i5gzubcrgGaD17Orsl.y191o9bfeEIE4a7iw95lhZzHVUlPOhurzicgGR5biy5vqpPS77lZdpZ2mcp1WWwQJDKGw!/b&amp;bo=8wFpAQAAAAABB7o!&amp;rf=viewer_4</div>
     
     </div>
     <!-- 响应式布局，针对手机端内容显示 -->
@@ -367,6 +520,11 @@ text</p>
           
           
           
+            <li><a href="https://fanwujiu.github.io/talk">说说</a></li>
+            
+          
+          <li><a href="https://fanwujiu.github.io/friends">友链</a></li>
+
           
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -444,10 +602,39 @@ text</p>
             </div>
             <hr style="width: 80%;">
             
+            <div class="sharebtnContainer">
+                <button type="button" class="sharebtn">转载分享</button>
+            </div>
+            <div class="shareContainer">
+                <div class="share" style="height:30px;background: white;">
+                    <a class="qq" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/QQ.png" alt=""></i></a>
+                    <a class="wechat" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/wechat.png" alt=""></i></a>
+                    <a class="weibo" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/weibo.png" alt=""></i></a>
+                    <a class="qzone" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/qzone.png" alt=""></i></a>
+                                <a class="douban" href=""><i><img class="shareicon"
+                                    src="https://fanwujiu.github.io/media/images/douban.png" alt=""></i></a>
+                                <a class="facebook" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/facebook.png" alt=""></i></a>
+                    <a class="twitter" href=""><i><img class="shareicon"
+                                src="https://fanwujiu.github.io/media/images/twitter.png" alt=""></i></a>
+                </div>
+            </div>
+            
+            
+            <div class="donateContainer">
+                <img src="https://fanwujiu.github.io/media/images/donate.png" alt="" class="donateImg">
+            </div>
+            <div class="donateContainer">
+                <img src="" alt="" class="donate">
+            </div>
             
             <div class="postfooter">
                 <ul class="post-copyright">
-                    <li><strong>文章作者：</strong></li>
+                    <li><strong>文章作者：</strong>范无咎@luogu.com.cn</li>
             <li><strong>原文链接：</strong>https://fanwujiu.github.io/text/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
@@ -555,6 +742,16 @@ text</p>
     });
 </script>
 
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://fanwujiu.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://fanwujiu.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://fanwujiu.github.io/media/live2d/assets/tororo.model.json");
+</script>
+
 <script>
     $(function () {
         $('.toggleContainer').click(function () {
@@ -582,6 +779,8 @@ text</p>
             bgurl = bgurl.replace("\\", "/");
     bg.css("background", "url('" + bgurl + "')");
 </script>
+
+<script src="https://fanwujiu.github.io/media/js/index.js"></script>
 
 
 <script>
