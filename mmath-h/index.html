@@ -116,7 +116,7 @@ Must run at Windows 2010 or Windows 2007, cpp, cpp11 or cpp17
                   
                 <li><a href="https://fanwujiu.github.io/friends" style="color:white">友链</a></li>
                 
-                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1598189240213" alt=""
+                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1598189534624" alt=""
                 class="menutopavatar"></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -617,7 +617,7 @@ string spow (string n, string k) //字符串乘方
 }
 string sabs (string x) //字符串绝对值 
 {
-    if (x[0] == '-') x[0] = 0;
+    if (x[0] == '-') x.erase (0, 1); 
     return x;
 }
 int isnull (string x) //字符串是否为空 
@@ -1249,7 +1249,7 @@ string spow (string n, string k) //字符串乘方
 }
 string sabs (string x) //字符串绝对值 
 {
-    if (x[0] == '-') x[0] = 0;
+    if (x[0] == '-') x.erase (0, 1); 
     return x;
 }
 int isnull (string x) //字符串是否为空 
