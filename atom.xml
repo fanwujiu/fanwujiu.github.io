@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fanwujiu.github.io</id>
     <title>日神社</title>
-    <updated>2020-10-05T06:55:19.907Z</updated>
+    <updated>2020-10-05T08:17:48.802Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fanwujiu.github.io"/>
     <link rel="self" href="https://fanwujiu.github.io/atom.xml"/>
@@ -10,6 +10,69 @@
     <logo>https://fanwujiu.github.io/images/avatar.png</logo>
     <icon>https://fanwujiu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日神社</rights>
+    <entry>
+        <title type="html"><![CDATA[游记|2020鄞州区科技节编程比赛初赛]]></title>
+        <id>https://fanwujiu.github.io/yj-qs-cs-2020/</id>
+        <link href="https://fanwujiu.github.io/yj-qs-cs-2020/">
+        </link>
+        <updated>2020-10-02T08:26:13.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="2020929-0934">2020/9/29 09:34</h1>
+<p>我：***这CSP的题目太难了</p>
+<p>CSP真题：谁叫你太蒻……</p>
+<hr>
+<p>我：hhhhhhhhhc这历年区赛真题太太太太太太太水了</p>
+<p>历年区赛真题：我做错了什么……</p>
+<hr>
+<h1 id="2020930-1231">2020/9/30 12:31</h1>
+<p><s>我：为什么别的学校赶考都用大巴，我们学校打车</s></p>
+<p>不过还好弟弟和我一起坐车。</p>
+<h1 id="2020930-1303">2020/9/30 13:03</h1>
+<p>我：啊这……</p>
+<pre><code>- 集合：并（∪）、交（∩）、属于（∈）……
+- 公式：求和（∑）、求积（∏）……
+- 阅读程序：模拟、递归、字符串……
+- 程序填空：dp、位运算、八皇后……
+</code></pre>
+<p>wtnl，wtrl</p>
+<blockquote>
+<p>除了ZJ都是弱省。\</p>
+</blockquote>
+<p>——某著名OIer</p>
+<p>#2020/9/30 15:33</p>
+<figure data-type="image" tabindex="1"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2198199041,2156929119&amp;fm=26&amp;gp=0.jpg" alt="" loading="lazy"></figure>
+<p>出来后，我的头发是这样的……</p>
+<p>#2020/9/30 16:27</p>
+<p>背着弟弟回到学校， 看见了桌上 <code>1024 * 1024</code> 格高的作业……</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="2020929-0934">2020/9/29 09:34</h1>
+<p>我：***这CSP的题目太难了</p>
+<p>CSP真题：谁叫你太蒻……</p>
+<hr>
+<p>我：hhhhhhhhhc这历年区赛真题太太太太太太太水了</p>
+<p>历年区赛真题：我做错了什么……</p>
+<hr>
+<h1 id="2020930-1231">2020/9/30 12:31</h1>
+<p><s>我：为什么别的学校赶考都用大巴，我们学校打车</s></p>
+<p>不过还好弟弟和我一起坐车。</p>
+<h1 id="2020930-1303">2020/9/30 13:03</h1>
+<p>我：啊这……</p>
+<pre><code>- 集合：并（∪）、交（∩）、属于（∈）……
+- 公式：求和（∑）、求积（∏）……
+- 阅读程序：模拟、递归、字符串……
+- 程序填空：dp、位运算、八皇后……
+</code></pre>
+<p>wtnl，wtrl</p>
+<blockquote>
+<p>除了ZJ都是弱省。\</p>
+</blockquote>
+<p>——某著名OIer</p>
+<p>#2020/9/30 15:33</p>
+<figure data-type="image" tabindex="1"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2198199041,2156929119&amp;fm=26&amp;gp=0.jpg" alt="" loading="lazy"></figure>
+<p>出来后，我的头发是这样的……</p>
+<p>#2020/9/30 16:27</p>
+<p>背着弟弟回到学校， 看见了桌上 <code>1024 * 1024</code> 格高的作业……</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA["mmath.h"]]></title>
         <id>https://fanwujiu.github.io/mmath-h/</id>
