@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fanwujiu.github.io</id>
     <title>日神社</title>
-    <updated>2020-10-06T05:35:16.249Z</updated>
+    <updated>2020-10-06T05:43:32.328Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fanwujiu.github.io"/>
     <link rel="self" href="https://fanwujiu.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://fanwujiu.github.io/images/avatar.png</logo>
     <icon>https://fanwujiu.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日神社</rights>
+    <entry>
+        <title type="html"><![CDATA["maths.h" ]]></title>
+        <id>https://fanwujiu.github.io/maths-h/</id>
+        <link href="https://fanwujiu.github.io/maths-h/">
+        </link>
+        <updated>2020-10-06T05:37:28.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[游记|2020鄞州区科技节编程比赛初赛]]></title>
         <id>https://fanwujiu.github.io/yj-qs-cs-2020/</id>
