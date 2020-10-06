@@ -108,7 +108,7 @@ Must run at Windows 2010 or Windows 2007, cpp, cpp11 or cpp17
                   
                 <li><a href="https://fanwujiu.github.io/friends" style="color:white">友链</a></li>
                 
-                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1601962471753" alt=""
+                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1601962512889" alt=""
                 class="menutopavatar"></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -331,15 +331,15 @@ E-mail: 2335979273@qq.com
 
 using std::string;
 
-int min (int a, int b) //最小值 
+inline int min (int a, int b) //最小值 
 {
 	return a &lt; b ? a : b;
 }
-int max (int a, int b) //最大值 
+inline int max (int a, int b) //最大值 
 {
 	return a &gt; b ? a : b;
 }
-void cswap (int a, int b)
+inline void cswap (int a, int b)
 {
 	int t = a; a = b; b = t;
 }
@@ -351,7 +351,7 @@ int lcm (int n, int k) //最小公倍数
 {
 	return n * k / gcd (n, k);
 }
-int power (int base, int pow) //快速幂 
+inline int power (int base, int pow) //快速幂 
 {
     int result = 1;
     while (pow &gt; 0) 
@@ -366,7 +366,7 @@ int power (int base, int pow) //快速幂
 struct frac
 {
 	int numerator; //分子 
-	int denominator; //分母
+	int denominator; //分母 
 	int reduc_frac () //约分 
 	{
 		int temp = gcd (numerator, denominator);
@@ -392,12 +392,13 @@ struct frac
 		}
 		return 1;
 	}
-	int operator = (COORD c) //初始化分数 （例：frac a = {1, 2};） 
+	int operator = (string c) //初始化分数 （例：frac a = &quot;1/2&quot;;） 
 	{
-		if (c.Y == 0) return -1;
+		if (c.size () == 0) return -1;
 		int i, j, x = 0, y = 0;
-		numerator = x;
-		denominator = y;
+		for (i = 0; c[i] != '/'; ++i) x = x * 10 + (c[i] - '0');
+		for (j = i + 1; j &lt; c.size (); ++j) y = y * 10 + (c[j] - '0');
+		numerator = x; denominator = y;
 		return 1;
 	}
 	double value (int bits)
@@ -410,7 +411,7 @@ struct frac
 		numerator = 0;
 		denominator = 1;
 		reduc_frac ();
-	}
+	}    
 };
 int reduc_com (frac a, frac b) //通分 
 {
@@ -963,15 +964,15 @@ E-mail: 2335979273@qq.com
 
 using std::string;
 
-int min (int a, int b) //最小值 
+inline int min (int a, int b) //最小值 
 {
 	return a &lt; b ? a : b;
 }
-int max (int a, int b) //最大值 
+inline int max (int a, int b) //最大值 
 {
 	return a &gt; b ? a : b;
 }
-void cswap (int a, int b)
+inline void cswap (int a, int b)
 {
 	int t = a; a = b; b = t;
 }
@@ -983,7 +984,7 @@ int lcm (int n, int k) //最小公倍数
 {
 	return n * k / gcd (n, k);
 }
-int power (int base, int pow) //快速幂 
+inline int power (int base, int pow) //快速幂 
 {
     int result = 1;
     while (pow &gt; 0) 
@@ -998,7 +999,7 @@ int power (int base, int pow) //快速幂
 struct frac
 {
 	int numerator; //分子 
-	int denominator; //分母
+	int denominator; //分母 
 	int reduc_frac () //约分 
 	{
 		int temp = gcd (numerator, denominator);
@@ -1024,12 +1025,13 @@ struct frac
 		}
 		return 1;
 	}
-	int operator = (COORD c) //初始化分数 （例：frac a = {1, 2};） 
+	int operator = (string c) //初始化分数 （例：frac a = &quot;1/2&quot;;） 
 	{
-		if (c.Y == 0) return -1;
+		if (c.size () == 0) return -1;
 		int i, j, x = 0, y = 0;
-		numerator = x;
-		denominator = y;
+		for (i = 0; c[i] != '/'; ++i) x = x * 10 + (c[i] - '0');
+		for (j = i + 1; j &lt; c.size (); ++j) y = y * 10 + (c[j] - '0');
+		numerator = x; denominator = y;
 		return 1;
 	}
 	double value (int bits)
@@ -1042,7 +1044,7 @@ struct frac
 		numerator = 0;
 		denominator = 1;
 		reduc_frac ();
-	}
+	}    
 };
 int reduc_com (frac a, frac b) //通分 
 {
