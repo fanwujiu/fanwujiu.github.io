@@ -1,16 +1,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="2020/9/29 09:34
-我：***这CSP的题目太难了
-CSP真题：谁叫你太蒻……
+    <meta name="description" content="题目链接
+数据很水，long long即可。
+前置：
+gcd() : 欧几里得算法
+ll gcd (ll n, ll k){
+	if (k == 0) return n;
+	return gcd (k, (n % k));
+}
 
-我：hhhhhhhhhc这历年区赛真题太太太太太太太水了
-历年区赛真题：我做错了什么……
-
-2020/9/30 12:31
-我：为什么别的学校赶考..." />
-    <meta name="keywords" content="游记" />
+函数功能：..." />
+    <meta name="keywords" content="题解" />
     <link rel="stylesheet" href="https://fanwujiu.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fanwujiu.github.io/styles/main.css">
     
@@ -294,12 +295,12 @@ CSP真题：谁叫你太蒻……
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-10-02</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-10-06</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
             <div class="posttag">
                 
-                <a href="https://fanwujiu.github.io/jbaOtRa11/" class="postlink">
-                    <i class="fa fa-tag"></i> 游记
+                <a href="https://fanwujiu.github.io/HAQ48mPRh/" class="postlink">
+                    <i class="fa fa-tag"></i> 题解
                 </a>
                 
             </div>
@@ -307,46 +308,66 @@ CSP真题：谁叫你太蒻……
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>游记|2020鄞州区科技节编程比赛初赛</h2>
+                <h2>[题解]U121034 A+B Problem</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://fanwujiu.github.io/yj-qs-cs-2020/</div>
+                <div id="pl" style="display:none">https://fanwujiu.github.io/ti-jie-u121034/</div>
                 <div id="rootaddr" style="display:none">https://fanwujiu.github.io</div>
-                <span id="hotnum" class="leancloud_visitors" data-flag-title="游记|2020鄞州区科技节编程比赛初赛">
+                <span id="hotnum" class="leancloud_visitors" data-flag-title="[题解]U121034 A+B Problem">
                     <h4 class="readercount"><i class="fa fa-eye" aria-hidden="true"
                             style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
                             class="leancloud-visitors-count">loading...</i></h4>
                 </span>
             </div>
             <div class="text ">
-                <h1 id="2020929-0934">2020/9/29 09:34</h1>
-<p>我：***这CSP的题目太难了</p>
-<p>CSP真题：谁叫你太蒻……</p>
-<hr>
-<p>我：hhhhhhhhhc这历年区赛真题太太太太太太太水了</p>
-<p>历年区赛真题：我做错了什么……</p>
-<hr>
-<h1 id="2020930-1231">2020/9/30 12:31</h1>
-<p><s>我：为什么别的学校赶考都用大巴，我们学校打车</s></p>
-<p>不过还好弟弟和我一起坐车。</p>
-<h1 id="2020930-1303">2020/9/30 13:03</h1>
-<p>我：啊这……</p>
-<ul>
-<li>集合：并（∪）、交（∩）、属于（∈）……</li>
-<li>公式：求和（∑）、求积（∏）……</li>
-<li>阅读程序：模拟、递归、字符串……</li>
-<li>程序填空：dp、位运算、八皇后……</li>
-</ul>
-<p>wtnl，wtrl</p>
-<blockquote>
-<p>除了ZJ都是弱省。<br>
-——某著名OIer</p>
-</blockquote>
-<h1 id="2020930-1533">2020/9/30 15:33</h1>
-<figure data-type="image" tabindex="1"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2198199041,2156929119&amp;fm=26&amp;gp=0.jpg" alt="" loading="lazy"></figure>
-<p>出来后，我的头发是这样的……</p>
-<h1 id="2020930-1627">2020/9/30 16:27</h1>
-<p><s>背着</s>陪着弟弟回到学校， 看见了桌上 <code>1024 * 1024</code> 格高的作业……</p>
-<!-- more -->
+                <p><a href="https://www.luogu.com.cn/problem/U121034">题目链接</a></p>
+<p>数据很水，<code>long long</code>即可。</p>
+<h2 id="前置">前置：</h2>
+<h3 id="gcd-欧几里得算法">gcd() : <a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675?fr=aladdin">欧几里得算法</a></h3>
+<pre><code class="language-c">ll gcd (ll n, ll k){
+	if (k == 0) return n;
+	return gcd (k, (n % k));
+}
+</code></pre>
+<p>函数功能：求<code>n</code>和<code>k</code>的最大公约数。</p>
+<h3 id="lcm-最小公倍数">lcm() : 最小公倍数</h3>
+<pre><code class="language-c">ll lcm (ll n, ll k){
+	return (n * k) / gcd (n, k);
+}
+</code></pre>
+<p>已知任意两数的最小公倍数和最大公约数的积等于两数之积。</p>
+<h2 id="算法分析">算法分析</h2>
+<p>即将两数通分后取两数分子和为分子，两数分母为分母。</p>
+<h3 id="通分">通分</h3>
+<p>即将两数分子分别乘两数分母最小公倍数除以原分母的商，分母都变为原分母的最小公倍数。</p>
+<h3 id="约分">约分</h3>
+<p>即将分子分母分别除以分子分母的最大公约数，转化成最简分数。</p>
+<h2 id="代码实现">代码实现</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#define ll long long
+ll gcd (ll n, ll k){
+	if (k == 0) return n;
+	return gcd (k, (n % k));
+}
+ll lcm (ll n, ll k){
+	return (n * k) / gcd (n, k);
+}
+int main (){
+	//freopen (&quot;1.in&quot;, &quot;r&quot;, stdin);
+	//freopen (&quot;1.out&quot;, &quot;w&quot;, stdout);
+	ll as, am, bs, bm, anss, ansm;
+	scanf (&quot;%lld/%lld\n%lld/%lld&quot;, &amp;as, &amp;am, &amp;bs, &amp;bm);
+	anss = as * (lcm (am, bm) / am) + bs * (lcm (am, bm) / bm);
+	ansm = lcm (am, bm);
+	if (gcd (anss, ansm) &gt; 1){
+		ll t = gcd (anss, ansm);
+		anss /= t; ansm /= t;
+	}
+	if (anss % ansm == 0) printf (&quot;%lld\n&quot;, anss / ansm);
+	else printf (&quot;%lld/%lld\n&quot;, anss, ansm);
+	return 0;
+}
+</code></pre>
+<p>转载于<a href="https://www.luogu.com.cn/blog/izumi/">宇智波泉的小屋</a></p>
 
             </div>
             <hr style="width: 80%;">
@@ -384,32 +405,22 @@ CSP真题：谁叫你太蒻……
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>范无咎@luogu.com.cn</li>
-            <li><strong>原文链接：</strong>https://fanwujiu.github.io/yj-qs-cs-2020/</li>
+            <li><strong>原文链接：</strong>https://fanwujiu.github.io/ti-jie-u121034/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/maths-h/';return false">
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/maths-h/';return false">
                     <img src="" style="width: 100%;" class="opimg">
                     <h4 class="optitle">&#34;maths.h&#34; </h4>
                 </div>
             </div>
-            <div class="prev-post">
-                上一篇 <a href="https://fanwujiu.github.io/maths-h/">&#34;maths.h&#34; </a>
-            </div>
-            
-            
-            <div class="next-post-pc">
-                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/mmath-h/';return false">
-                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1598248071265&amp;di=df3eefdfb0cf4db135e04c73f6a37045&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170803%2F64ec559d031b4f2788714d1c871d3d3f_th.png" style="width: 100%;" class="opimg">
-                    <h4 class="optitle">&#34;mmath.h&#34;</h4>
-                </div>
-            </div>
             <div class="next-post">
-                下一篇 <a href="https://fanwujiu.github.io/mmath-h/">&#34;mmath.h&#34;</a>
+                下一篇 <a href="https://fanwujiu.github.io/maths-h/">&#34;maths.h&#34; </a>
             </div>
             
         </div>
@@ -459,11 +470,23 @@ CSP真题：谁叫你太蒻……
         
         <div class="toc-container">
             <ul class="markdownIt-TOC">
-<li><a href="#2020929-0934">2020/9/29 09:34</a></li>
-<li><a href="#2020930-1231">2020/9/30 12:31</a></li>
-<li><a href="#2020930-1303">2020/9/30 13:03</a></li>
-<li><a href="#2020930-1533">2020/9/30 15:33</a></li>
-<li><a href="#2020930-1627">2020/9/30 16:27</a></li>
+<li>
+<ul>
+<li><a href="#%E5%89%8D%E7%BD%AE">前置：</a>
+<ul>
+<li><a href="#gcd-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95">gcd() : 欧几里得算法</a></li>
+<li><a href="#lcm-%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0">lcm() : 最小公倍数</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90">算法分析</a>
+<ul>
+<li><a href="#%E9%80%9A%E5%88%86">通分</a></li>
+<li><a href="#%E7%BA%A6%E5%88%86">约分</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -587,12 +610,12 @@ CSP真题：谁叫你太蒻……
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-10-02</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-10-06</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
             <div class="posttag">
                 
-                <a href="https://fanwujiu.github.io/jbaOtRa11/" class="postlink">
-                    <i class="fa fa-tag"></i> 游记
+                <a href="https://fanwujiu.github.io/HAQ48mPRh/" class="postlink">
+                    <i class="fa fa-tag"></i> 题解
                 </a>
                 
             </div>
@@ -600,46 +623,66 @@ CSP真题：谁叫你太蒻……
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>游记|2020鄞州区科技节编程比赛初赛</h2>
+                <h2>[题解]U121034 A+B Problem</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://fanwujiu.github.io/yj-qs-cs-2020/</div>
+                <div id="pl" style="display:none">https://fanwujiu.github.io/ti-jie-u121034/</div>
                 <div id="rootaddr" style="display:none">https://fanwujiu.github.io</div>
-                <span id="hotnum" class="leancloud_visitors" data-flag-title="游记|2020鄞州区科技节编程比赛初赛">
+                <span id="hotnum" class="leancloud_visitors" data-flag-title="[题解]U121034 A+B Problem">
                     <h4 class="readercount"><i class="fa fa-eye" aria-hidden="true"
                             style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
                             class="leancloud-visitors-count">loading...</i></h4>
                 </span>
             </div>
             <div class="text ">
-                <h1 id="2020929-0934">2020/9/29 09:34</h1>
-<p>我：***这CSP的题目太难了</p>
-<p>CSP真题：谁叫你太蒻……</p>
-<hr>
-<p>我：hhhhhhhhhc这历年区赛真题太太太太太太太水了</p>
-<p>历年区赛真题：我做错了什么……</p>
-<hr>
-<h1 id="2020930-1231">2020/9/30 12:31</h1>
-<p><s>我：为什么别的学校赶考都用大巴，我们学校打车</s></p>
-<p>不过还好弟弟和我一起坐车。</p>
-<h1 id="2020930-1303">2020/9/30 13:03</h1>
-<p>我：啊这……</p>
-<ul>
-<li>集合：并（∪）、交（∩）、属于（∈）……</li>
-<li>公式：求和（∑）、求积（∏）……</li>
-<li>阅读程序：模拟、递归、字符串……</li>
-<li>程序填空：dp、位运算、八皇后……</li>
-</ul>
-<p>wtnl，wtrl</p>
-<blockquote>
-<p>除了ZJ都是弱省。<br>
-——某著名OIer</p>
-</blockquote>
-<h1 id="2020930-1533">2020/9/30 15:33</h1>
-<figure data-type="image" tabindex="1"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2198199041,2156929119&amp;fm=26&amp;gp=0.jpg" alt="" loading="lazy"></figure>
-<p>出来后，我的头发是这样的……</p>
-<h1 id="2020930-1627">2020/9/30 16:27</h1>
-<p><s>背着</s>陪着弟弟回到学校， 看见了桌上 <code>1024 * 1024</code> 格高的作业……</p>
-<!-- more -->
+                <p><a href="https://www.luogu.com.cn/problem/U121034">题目链接</a></p>
+<p>数据很水，<code>long long</code>即可。</p>
+<h2 id="前置">前置：</h2>
+<h3 id="gcd-欧几里得算法">gcd() : <a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675?fr=aladdin">欧几里得算法</a></h3>
+<pre><code class="language-c">ll gcd (ll n, ll k){
+	if (k == 0) return n;
+	return gcd (k, (n % k));
+}
+</code></pre>
+<p>函数功能：求<code>n</code>和<code>k</code>的最大公约数。</p>
+<h3 id="lcm-最小公倍数">lcm() : 最小公倍数</h3>
+<pre><code class="language-c">ll lcm (ll n, ll k){
+	return (n * k) / gcd (n, k);
+}
+</code></pre>
+<p>已知任意两数的最小公倍数和最大公约数的积等于两数之积。</p>
+<h2 id="算法分析">算法分析</h2>
+<p>即将两数通分后取两数分子和为分子，两数分母为分母。</p>
+<h3 id="通分">通分</h3>
+<p>即将两数分子分别乘两数分母最小公倍数除以原分母的商，分母都变为原分母的最小公倍数。</p>
+<h3 id="约分">约分</h3>
+<p>即将分子分母分别除以分子分母的最大公约数，转化成最简分数。</p>
+<h2 id="代码实现">代码实现</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#define ll long long
+ll gcd (ll n, ll k){
+	if (k == 0) return n;
+	return gcd (k, (n % k));
+}
+ll lcm (ll n, ll k){
+	return (n * k) / gcd (n, k);
+}
+int main (){
+	//freopen (&quot;1.in&quot;, &quot;r&quot;, stdin);
+	//freopen (&quot;1.out&quot;, &quot;w&quot;, stdout);
+	ll as, am, bs, bm, anss, ansm;
+	scanf (&quot;%lld/%lld\n%lld/%lld&quot;, &amp;as, &amp;am, &amp;bs, &amp;bm);
+	anss = as * (lcm (am, bm) / am) + bs * (lcm (am, bm) / bm);
+	ansm = lcm (am, bm);
+	if (gcd (anss, ansm) &gt; 1){
+		ll t = gcd (anss, ansm);
+		anss /= t; ansm /= t;
+	}
+	if (anss % ansm == 0) printf (&quot;%lld\n&quot;, anss / ansm);
+	else printf (&quot;%lld/%lld\n&quot;, anss, ansm);
+	return 0;
+}
+</code></pre>
+<p>转载于<a href="https://www.luogu.com.cn/blog/izumi/">宇智波泉的小屋</a></p>
 
             </div>
             <hr style="width: 80%;">
@@ -677,32 +720,22 @@ CSP真题：谁叫你太蒻……
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>范无咎@luogu.com.cn</li>
-            <li><strong>原文链接：</strong>https://fanwujiu.github.io/yj-qs-cs-2020/</li>
+            <li><strong>原文链接：</strong>https://fanwujiu.github.io/ti-jie-u121034/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/maths-h/';return false">
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/maths-h/';return false">
                     <img src="" style="width: 100%;" class="opimg">
                     <h4 class="optitle">&#34;maths.h&#34; </h4>
                 </div>
             </div>
-            <div class="prev-post">
-                上一篇 <a href="https://fanwujiu.github.io/maths-h/">&#34;maths.h&#34; </a>
-            </div>
-            
-            
-            <div class="next-post-pc">
-                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/mmath-h/';return false">
-                    <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1598248071265&amp;di=df3eefdfb0cf4db135e04c73f6a37045&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170803%2F64ec559d031b4f2788714d1c871d3d3f_th.png" style="width: 100%;" class="opimg">
-                    <h4 class="optitle">&#34;mmath.h&#34;</h4>
-                </div>
-            </div>
             <div class="next-post">
-                下一篇 <a href="https://fanwujiu.github.io/mmath-h/">&#34;mmath.h&#34;</a>
+                下一篇 <a href="https://fanwujiu.github.io/maths-h/">&#34;maths.h&#34; </a>
             </div>
             
         </div>
