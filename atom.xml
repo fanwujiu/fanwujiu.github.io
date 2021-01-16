@@ -2,89 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fanwujiu.github.io</id>
     <title>日神社</title>
-    <updated>2020-11-21T04:02:36.807Z</updated>
+    <updated>2021-01-16T03:44:07.603Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fanwujiu.github.io"/>
     <link rel="self" href="https://fanwujiu.github.io/atom.xml"/>
     <subtitle>やたきの居</subtitle>
     <logo>https://fanwujiu.github.io/images/avatar.png</logo>
     <icon>https://fanwujiu.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 日神社</rights>
+    <rights>All rights reserved 2021, 日神社</rights>
+    <entry>
+        <title type="html"><![CDATA[[题解]U121034 A+B Problem]]></title>
+        <id>https://fanwujiu.github.io/ti-jie-u121034/</id>
+        <link href="https://fanwujiu.github.io/ti-jie-u121034/">
+        </link>
+        <updated>2020-10-06T06:57:57.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA["maths.h" ]]></title>
         <id>https://fanwujiu.github.io/maths-h/</id>
         <link href="https://fanwujiu.github.io/maths-h/">
         </link>
         <updated>2020-10-06T05:37:28.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[游记|2020鄞州区科技节编程比赛初赛]]></title>
-        <id>https://fanwujiu.github.io/yj-qs-cs-2020/</id>
-        <link href="https://fanwujiu.github.io/yj-qs-cs-2020/">
-        </link>
-        <updated>2020-10-02T08:26:13.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="2020929-0934">2020/9/29 09:34</h1>
-<p>我：***这CSP的题目太难了</p>
-<p>CSP真题：谁叫你太蒻……</p>
-<hr>
-<p>我：hhhhhhhhhc这历年区赛真题太太太太太太太水了</p>
-<p>历年区赛真题：我做错了什么……</p>
-<hr>
-<h1 id="2020930-1231">2020/9/30 12:31</h1>
-<p><s>我：为什么别的学校赶考都用大巴，我们学校打车</s></p>
-<p>不过还好弟弟和我一起坐车。</p>
-<h1 id="2020930-1303">2020/9/30 13:03</h1>
-<p>我：啊这……</p>
-<ul>
-<li>集合：并（∪）、交（∩）、属于（∈）……</li>
-<li>公式：求和（∑）、求积（∏）……</li>
-<li>阅读程序：模拟、递归、字符串……</li>
-<li>程序填空：dp、位运算、八皇后……</li>
-</ul>
-<p>wtnl，wtrl</p>
-<blockquote>
-<p>除了ZJ都是弱省。<br>
-——某著名OIer</p>
-</blockquote>
-<h1 id="2020930-1533">2020/9/30 15:33</h1>
-<figure data-type="image" tabindex="1"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2198199041,2156929119&amp;fm=26&amp;gp=0.jpg" alt="" loading="lazy"></figure>
-<p>出来后，我的头发是这样的……</p>
-<h1 id="2020930-1627">2020/9/30 16:27</h1>
-<p><s>背着</s>陪着弟弟回到学校， 看见了桌上 <code>1024 * 1024</code> 格高的作业……</p>
-<h1 id="20201009-1526">2020/10/09 15:26</h1>
-<p>成绩出来了，33.5，全校排名第三，全区第41。</p>
-]]></summary>
-        <content type="html"><![CDATA[<h1 id="2020929-0934">2020/9/29 09:34</h1>
-<p>我：***这CSP的题目太难了</p>
-<p>CSP真题：谁叫你太蒻……</p>
-<hr>
-<p>我：hhhhhhhhhc这历年区赛真题太太太太太太太水了</p>
-<p>历年区赛真题：我做错了什么……</p>
-<hr>
-<h1 id="2020930-1231">2020/9/30 12:31</h1>
-<p><s>我：为什么别的学校赶考都用大巴，我们学校打车</s></p>
-<p>不过还好弟弟和我一起坐车。</p>
-<h1 id="2020930-1303">2020/9/30 13:03</h1>
-<p>我：啊这……</p>
-<ul>
-<li>集合：并（∪）、交（∩）、属于（∈）……</li>
-<li>公式：求和（∑）、求积（∏）……</li>
-<li>阅读程序：模拟、递归、字符串……</li>
-<li>程序填空：dp、位运算、八皇后……</li>
-</ul>
-<p>wtnl，wtrl</p>
-<blockquote>
-<p>除了ZJ都是弱省。<br>
-——某著名OIer</p>
-</blockquote>
-<h1 id="2020930-1533">2020/9/30 15:33</h1>
-<figure data-type="image" tabindex="1"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2198199041,2156929119&amp;fm=26&amp;gp=0.jpg" alt="" loading="lazy"></figure>
-<p>出来后，我的头发是这样的……</p>
-<h1 id="2020930-1627">2020/9/30 16:27</h1>
-<p><s>背着</s>陪着弟弟回到学校， 看见了桌上 <code>1024 * 1024</code> 格高的作业……</p>
-<h1 id="20201009-1526">2020/10/09 15:26</h1>
-<p>成绩出来了，33.5，全校排名第三，全区第41。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA["mmath.h"]]></title>
