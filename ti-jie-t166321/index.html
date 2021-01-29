@@ -1,16 +1,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="题目链接
-数据很水，long long即可。
-前置：
-gcd() : 欧几里得算法
-ll gcd (ll n, ll k){
-	if (k == 0) return n;
-	return gcd (k, (n % k));
-}
-
-函数功能：..." />
+    <meta name="description" content="[题解]T166321 [SgOI]奶茶
+题目链接
+1 | 算法分析
+阅读题面可知，本题实际上要求 y=ϕ(x)y = \phi(x)y=ϕ(x).
+(
+∵lcm(x,ai)=xai\because lcm (x,a_i) = xa_i∵l..." />
     <meta name="keywords" content="题解" />
     <link rel="stylesheet" href="https://fanwujiu.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fanwujiu.github.io/styles/main.css">
@@ -295,7 +291,7 @@ ll gcd (ll n, ll k){
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-10-06</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-01-29</div>
             <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
             <div class="posttag">
                 
@@ -308,66 +304,62 @@ ll gcd (ll n, ll k){
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>[题解]U121034 A+B Problem</h2>
+                <h2>[题解]T166321 [SgOI]奶茶</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://fanwujiu.github.io/ti-jie-u121034/</div>
+                <div id="pl" style="display:none">https://fanwujiu.github.io/ti-jie-t166321/</div>
                 <div id="rootaddr" style="display:none">https://fanwujiu.github.io</div>
-                <span id="hotnum" class="leancloud_visitors" data-flag-title="[题解]U121034 A+B Problem">
+                <span id="hotnum" class="leancloud_visitors" data-flag-title="[题解]T166321 [SgOI]奶茶">
                     <h4 class="readercount"><i class="fa fa-eye" aria-hidden="true"
                             style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
                             class="leancloud-visitors-count">loading...</i></h4>
                 </span>
             </div>
             <div class="text ">
-                <p><a href="https://www.luogu.com.cn/problem/U121034">题目链接</a></p>
-<p>数据很水，<code>long long</code>即可。</p>
-<h2 id="前置">前置：</h2>
-<h3 id="gcd-欧几里得算法">gcd() : <a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675?fr=aladdin">欧几里得算法</a></h3>
-<pre><code class="language-c">ll gcd (ll n, ll k){
-	if (k == 0) return n;
-	return gcd (k, (n % k));
+                <h1 id="题解t166321-sgoi奶茶">[题解]T166321 [SgOI]奶茶</h1>
+<p><a href="https://www.luogu.com.cn/problem/T166321">题目链接</a></p>
+<h2 id="1-算法分析">1 | 算法分析</h2>
+<p>阅读题面可知，本题实际上要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>ϕ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = \phi(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">ϕ</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span>.</p>
+<p>(</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∵</mo><mi>l</mi><mi>c</mi><mi>m</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>a</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><mi>x</mi><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\because lcm (x,a_i) = xa_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∵</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord mathdefault">x</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>g</mi><mi>c</mi><mi>d</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>a</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\therefore gcd (x,a_i) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">c</span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>y</mi><mo>=</mo><mi>ϕ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\therefore y = \phi (x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">ϕ</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></p>
+<p>)</p>
+<h2 id="2-代码实现">2 | 代码实现</h2>
+<p>根据欧拉函数的定义，即可得出代码.</p>
+<p>C语言描述如下：</p>
+<pre><code class="language-c">int phi (int n)
+{
+	int ans = n;
+	int i;
+	for (i = 2; i &lt;= sqrt (n); ++i)
+		if (n % i == 0)
+		{
+			ans -= ans / i;
+			while (n % i == 0) n /= i;
+		}
+	if (n != 1) ans -= ans / n;
+	return ans;
 }
 </code></pre>
-<p>函数功能：求<code>n</code>和<code>k</code>的最大公约数。</p>
-<h3 id="lcm-最小公倍数">lcm() : 最小公倍数</h3>
-<pre><code class="language-c">ll lcm (ll n, ll k){
-	return (n * k) / gcd (n, k);
+<h2 id="3-代码优化">3 | 代码优化</h2>
+<p>我们可以看到，在for循环的第二个条件中，目前写为<code>i &lt;= sqrt (n)</code>.可能有些人会写成<code>i * i &lt;= n</code>，但是，虽然本题数据很水，但数据一旦大了，<code>i * i</code>就可能溢出．</p>
+<p>我们知道，对于任意正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> ,其约数总是成对出现,即只需找到较小的约数,就不需要再判断较大的约数.(<code>i &lt;= n / i</code>).</p>
+<p>再利用0的逻辑属性,将<code>== 0</code>的部分替换为<code>!</code>加前面的部分.</p>
+<p>完整代码的C语言描述如下:</p>
+<pre><code>int phi (int n)
+{
+	int ans = n;
+	int i;
+	for (i = 2; i &lt;= n / i; ++i)
+		if (!(n % i))
+		{
+			ans -= ans / i;
+			while (!(n % i)) n /= i;
+		}
+	if (n != 1) ans -= ans / n;
+	return ans;
 }
 </code></pre>
-<p>已知任意两数的最小公倍数和最大公约数的积等于两数之积。</p>
-<h2 id="算法分析">算法分析</h2>
-<p>即将两数通分后取两数分子和为分子，两数分母为分母。</p>
-<h3 id="通分">通分</h3>
-<p>即将两数分子分别乘两数分母最小公倍数除以原分母的商，分母都变为原分母的最小公倍数。</p>
-<h3 id="约分">约分</h3>
-<p>即将分子分母分别除以分子分母的最大公约数，转化成最简分数。</p>
-<h2 id="代码实现">代码实现</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#define ll long long
-ll gcd (ll n, ll k){
-	if (k == 0) return n;
-	return gcd (k, (n % k));
-}
-ll lcm (ll n, ll k){
-	return (n * k) / gcd (n, k);
-}
-int main (){
-	//freopen (&quot;1.in&quot;, &quot;r&quot;, stdin);
-	//freopen (&quot;1.out&quot;, &quot;w&quot;, stdout);
-	ll as, am, bs, bm, anss, ansm;
-	scanf (&quot;%lld/%lld\n%lld/%lld&quot;, &amp;as, &amp;am, &amp;bs, &amp;bm);
-	anss = as * (lcm (am, bm) / am) + bs * (lcm (am, bm) / bm);
-	ansm = lcm (am, bm);
-	if (gcd (anss, ansm) &gt; 1){
-		ll t = gcd (anss, ansm);
-		anss /= t; ansm /= t;
-	}
-	if (anss % ansm == 0) printf (&quot;%lld\n&quot;, anss / ansm);
-	else printf (&quot;%lld/%lld\n&quot;, anss, ansm);
-	return 0;
-}
-</code></pre>
-<p>转载于<a href="https://www.luogu.com.cn/blog/izumi/">宇智波泉的小屋</a></p>
 
             </div>
             <hr style="width: 80%;">
@@ -405,32 +397,22 @@ int main (){
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>范无咎@luogu.com.cn</li>
-            <li><strong>原文链接：</strong>https://fanwujiu.github.io/ti-jie-u121034/</li>
+            <li><strong>原文链接：</strong>https://fanwujiu.github.io/ti-jie-t166321/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/mtrx-qk-pwr/';return false">
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/mtrx-qk-pwr/';return false">
                     <img src="" style="width: 100%;" class="opimg">
                     <h4 class="optitle">矩阵快速幂</h4>
                 </div>
             </div>
-            <div class="prev-post">
-                上一篇 <a href="https://fanwujiu.github.io/mtrx-qk-pwr/">矩阵快速幂</a>
-            </div>
-            
-            
-            <div class="next-post-pc">
-                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/maths-h/';return false">
-                    <img src="" style="width: 100%;" class="opimg">
-                    <h4 class="optitle">&#34;maths.h&#34; </h4>
-                </div>
-            </div>
             <div class="next-post">
-                下一篇 <a href="https://fanwujiu.github.io/maths-h/">&#34;maths.h&#34; </a>
+                下一篇 <a href="https://fanwujiu.github.io/mtrx-qk-pwr/">矩阵快速幂</a>
             </div>
             
         </div>
@@ -480,21 +462,11 @@ int main (){
         
         <div class="toc-container">
             <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E9%A2%98%E8%A7%A3t166321-sgoi%E5%A5%B6%E8%8C%B6">[题解]T166321 [SgOI]奶茶</a>
 <ul>
-<li><a href="#%E5%89%8D%E7%BD%AE">前置：</a>
-<ul>
-<li><a href="#gcd-%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95">gcd() : 欧几里得算法</a></li>
-<li><a href="#lcm-%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0">lcm() : 最小公倍数</a></li>
-</ul>
-</li>
-<li><a href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90">算法分析</a>
-<ul>
-<li><a href="#%E9%80%9A%E5%88%86">通分</a></li>
-<li><a href="#%E7%BA%A6%E5%88%86">约分</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码实现</a></li>
+<li><a href="#1-%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90">1 | 算法分析</a></li>
+<li><a href="#2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">2 | 代码实现</a></li>
+<li><a href="#3-%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96">3 | 代码优化</a></li>
 </ul>
 </li>
 </ul>
@@ -620,7 +592,7 @@ int main (){
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2020-10-06</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-01-29</div>
             <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
             <div class="posttag">
                 
@@ -633,66 +605,62 @@ int main (){
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>[题解]U121034 A+B Problem</h2>
+                <h2>[题解]T166321 [SgOI]奶茶</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://fanwujiu.github.io/ti-jie-u121034/</div>
+                <div id="pl" style="display:none">https://fanwujiu.github.io/ti-jie-t166321/</div>
                 <div id="rootaddr" style="display:none">https://fanwujiu.github.io</div>
-                <span id="hotnum" class="leancloud_visitors" data-flag-title="[题解]U121034 A+B Problem">
+                <span id="hotnum" class="leancloud_visitors" data-flag-title="[题解]T166321 [SgOI]奶茶">
                     <h4 class="readercount"><i class="fa fa-eye" aria-hidden="true"
                             style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
                             class="leancloud-visitors-count">loading...</i></h4>
                 </span>
             </div>
             <div class="text ">
-                <p><a href="https://www.luogu.com.cn/problem/U121034">题目链接</a></p>
-<p>数据很水，<code>long long</code>即可。</p>
-<h2 id="前置">前置：</h2>
-<h3 id="gcd-欧几里得算法">gcd() : <a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/1647675?fr=aladdin">欧几里得算法</a></h3>
-<pre><code class="language-c">ll gcd (ll n, ll k){
-	if (k == 0) return n;
-	return gcd (k, (n % k));
+                <h1 id="题解t166321-sgoi奶茶">[题解]T166321 [SgOI]奶茶</h1>
+<p><a href="https://www.luogu.com.cn/problem/T166321">题目链接</a></p>
+<h2 id="1-算法分析">1 | 算法分析</h2>
+<p>阅读题面可知，本题实际上要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>ϕ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = \phi(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">ϕ</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span>.</p>
+<p>(</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∵</mo><mi>l</mi><mi>c</mi><mi>m</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>a</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><mi>x</mi><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\because lcm (x,a_i) = xa_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∵</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord mathdefault">x</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>g</mi><mi>c</mi><mi>d</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>a</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\therefore gcd (x,a_i) = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">c</span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo><mi>y</mi><mo>=</mo><mi>ϕ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\therefore y = \phi (x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">ϕ</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></p>
+<p>)</p>
+<h2 id="2-代码实现">2 | 代码实现</h2>
+<p>根据欧拉函数的定义，即可得出代码.</p>
+<p>C语言描述如下：</p>
+<pre><code class="language-c">int phi (int n)
+{
+	int ans = n;
+	int i;
+	for (i = 2; i &lt;= sqrt (n); ++i)
+		if (n % i == 0)
+		{
+			ans -= ans / i;
+			while (n % i == 0) n /= i;
+		}
+	if (n != 1) ans -= ans / n;
+	return ans;
 }
 </code></pre>
-<p>函数功能：求<code>n</code>和<code>k</code>的最大公约数。</p>
-<h3 id="lcm-最小公倍数">lcm() : 最小公倍数</h3>
-<pre><code class="language-c">ll lcm (ll n, ll k){
-	return (n * k) / gcd (n, k);
+<h2 id="3-代码优化">3 | 代码优化</h2>
+<p>我们可以看到，在for循环的第二个条件中，目前写为<code>i &lt;= sqrt (n)</code>.可能有些人会写成<code>i * i &lt;= n</code>，但是，虽然本题数据很水，但数据一旦大了，<code>i * i</code>就可能溢出．</p>
+<p>我们知道，对于任意正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> ,其约数总是成对出现,即只需找到较小的约数,就不需要再判断较大的约数.(<code>i &lt;= n / i</code>).</p>
+<p>再利用0的逻辑属性,将<code>== 0</code>的部分替换为<code>!</code>加前面的部分.</p>
+<p>完整代码的C语言描述如下:</p>
+<pre><code>int phi (int n)
+{
+	int ans = n;
+	int i;
+	for (i = 2; i &lt;= n / i; ++i)
+		if (!(n % i))
+		{
+			ans -= ans / i;
+			while (!(n % i)) n /= i;
+		}
+	if (n != 1) ans -= ans / n;
+	return ans;
 }
 </code></pre>
-<p>已知任意两数的最小公倍数和最大公约数的积等于两数之积。</p>
-<h2 id="算法分析">算法分析</h2>
-<p>即将两数通分后取两数分子和为分子，两数分母为分母。</p>
-<h3 id="通分">通分</h3>
-<p>即将两数分子分别乘两数分母最小公倍数除以原分母的商，分母都变为原分母的最小公倍数。</p>
-<h3 id="约分">约分</h3>
-<p>即将分子分母分别除以分子分母的最大公约数，转化成最简分数。</p>
-<h2 id="代码实现">代码实现</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#define ll long long
-ll gcd (ll n, ll k){
-	if (k == 0) return n;
-	return gcd (k, (n % k));
-}
-ll lcm (ll n, ll k){
-	return (n * k) / gcd (n, k);
-}
-int main (){
-	//freopen (&quot;1.in&quot;, &quot;r&quot;, stdin);
-	//freopen (&quot;1.out&quot;, &quot;w&quot;, stdout);
-	ll as, am, bs, bm, anss, ansm;
-	scanf (&quot;%lld/%lld\n%lld/%lld&quot;, &amp;as, &amp;am, &amp;bs, &amp;bm);
-	anss = as * (lcm (am, bm) / am) + bs * (lcm (am, bm) / bm);
-	ansm = lcm (am, bm);
-	if (gcd (anss, ansm) &gt; 1){
-		ll t = gcd (anss, ansm);
-		anss /= t; ansm /= t;
-	}
-	if (anss % ansm == 0) printf (&quot;%lld\n&quot;, anss / ansm);
-	else printf (&quot;%lld/%lld\n&quot;, anss, ansm);
-	return 0;
-}
-</code></pre>
-<p>转载于<a href="https://www.luogu.com.cn/blog/izumi/">宇智波泉的小屋</a></p>
 
             </div>
             <hr style="width: 80%;">
@@ -730,32 +698,22 @@ int main (){
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>范无咎@luogu.com.cn</li>
-            <li><strong>原文链接：</strong>https://fanwujiu.github.io/ti-jie-u121034/</li>
+            <li><strong>原文链接：</strong>https://fanwujiu.github.io/ti-jie-t166321/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/mtrx-qk-pwr/';return false">
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/mtrx-qk-pwr/';return false">
                     <img src="" style="width: 100%;" class="opimg">
                     <h4 class="optitle">矩阵快速幂</h4>
                 </div>
             </div>
-            <div class="prev-post">
-                上一篇 <a href="https://fanwujiu.github.io/mtrx-qk-pwr/">矩阵快速幂</a>
-            </div>
-            
-            
-            <div class="next-post-pc">
-                <div id="npcontainer" onclick="window.location.href= 'https://fanwujiu.github.io/maths-h/';return false">
-                    <img src="" style="width: 100%;" class="opimg">
-                    <h4 class="optitle">&#34;maths.h&#34; </h4>
-                </div>
-            </div>
             <div class="next-post">
-                下一篇 <a href="https://fanwujiu.github.io/maths-h/">&#34;maths.h&#34; </a>
+                下一篇 <a href="https://fanwujiu.github.io/mtrx-qk-pwr/">矩阵快速幂</a>
             </div>
             
         </div>
