@@ -108,7 +108,7 @@ Must run at Windows 2010 or Windows 2007, cpp, cpp11 or cpp17
                   
                 <li><a href="https://fanwujiu.github.io/friends" style="color:white">友链</a></li>
                 
-                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1612612880613" alt=""
+                  <li><img src="https://fanwujiu.github.io/images/avatar.png?v=1613481529415" alt=""
                 class="menutopavatar"></li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -290,7 +290,7 @@ Must run at Windows 2010 or Windows 2007, cpp, cpp11 or cpp17
             </div>
             <div class="postinfo-detail">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-08-18</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 15 min read</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 16 min read</div>
                 <div class="posttag">
                     
                     <a href="https://fanwujiu.github.io/9hyafVghS/" class="postlink">
@@ -325,8 +325,7 @@ E-mail: 2335979273@qq.com
 #ifndef MMATH
 #define MMATH
 
-#include &lt;math.h&gt;
-#include &lt;stdarg.h&gt;
+#include &lt;cmath&gt;
 #include &lt;string&gt;
 
 using std::string;
@@ -345,23 +344,13 @@ inline void cswap (int a, int b)
 }
 int gcd (int n, int k) //最大公约数 
 {
-	return k == 0 ? n : gcd (k, (n % k));
+	return !k ? n : gcd (k, (n % k));
 }
 int lcm (int n, int k) //最小公倍数 
 {
-	return n * k / gcd (n, k);
+	return n / gcd (n, k) * k;
 }
-inline int power (int base, int pow) //快速幂 
-{
-    int result = 1;
-    while (pow &gt; 0) 
-	{
-        if (pow &amp; 1) result = result * base;
-        pow &gt;&gt;= 1;
-        base = base * base;
-    }
-    return result;
-}
+
 //分数结构体 
 struct frac
 {
@@ -699,8 +688,11 @@ struct str_frac
 </code></pre>
 <!-- more -->
 <p>以下代码可能引起极度舒适，请谨慎食用。</p>
+<p><strong>Update Feb. 16, 2021: 加入了str_frac类型的所有操作，优化gcd()和lcm()，全局函数优化</strong></p>
 <pre><code class="language-cpp">#ifndef MMATH
+
 #define MMATH
+
 
 
 #include &lt;cmath&gt;
@@ -732,6 +724,14 @@ inline void cswap (int a, int b)
 {
 	
 	int t = a; a = b; b = t;
+	
+}
+
+inline void sswap (string a, string b)
+
+{
+	
+	string t = a; a = b; b = t;
 	
 }
 
@@ -842,7 +842,7 @@ struct frac
 		
 		for (i = 0; c[i] != '/'; ++i) x = x * 10 + (c[i] - '0');
 		
-		for (j = i + 1; j &lt; c.size (); ++j) y = y * 10 + (c[j] - '0');
+		for (j = i + 1; c[j] != '\0'; ++j) y = y * 10 + (c[j] - '0');
 		
 		numerator = x; denominator = y;
 		
@@ -854,7 +854,7 @@ struct frac
 	
 	{
 		
-		double ans = numerator / denominator;
+		double ans = numerator / (denominator * 1.0);
 		
 		return ans;
 		
@@ -874,7 +874,7 @@ struct frac
 	
 };
 
-int reduc_com (frac a, frac b) 
+int reduc_com (frac &amp;a, frac &amp;b) 
 
 {
 	
@@ -972,7 +972,7 @@ frac operator ^ (frac n, int k)
 
 
 
-string plus (string a, string b) 
+string add (string a, string b) 
 
 {
 
@@ -1006,7 +1006,7 @@ string plus (string a, string b)
 
 }
 
-string minus (string a, string b) 
+string mns (string a, string b) 
 
 {
 
@@ -1096,7 +1096,7 @@ string minus (string a, string b)
 
 }
 
-string times (string a, string b) 
+string tms (string a, string b) 
 
 {
 
@@ -1134,7 +1134,7 @@ string times (string a, string b)
 
         }
 
-        str = plus (str, tempstr);
+        str = add (str, tempstr);
 
     }
 
@@ -1162,7 +1162,7 @@ string div (string a, string b)
 
         {
 
-            string t = minus (A, b);
+            string t = mns (A, b);
 
             if (t &gt;= &quot;0&quot;)
 
@@ -1208,7 +1208,7 @@ string mod (string a, string b)
 
         {
 
-            string t = minus (A, b);
+            string t = mns (A, b);
 
             if (t &gt;= &quot;0&quot;)
 
@@ -1242,9 +1242,9 @@ string spow (string n, string k)
 
     if (k == &quot;0&quot;) return &quot;1&quot;;
 
-    else if (mod (k, &quot;2&quot;) == &quot;1&quot;) return times (n, spow (n, minus (k, &quot;1&quot;)));
+    else if (mod (k, &quot;2&quot;) == &quot;1&quot;) return tms (n, spow (n, mns (k, &quot;1&quot;)));
 
-    else return times (spow (n, div (k, &quot;2&quot;)), spow (n, div (k, &quot;2&quot;)));
+    else return tms (spow (n, div (k, &quot;2&quot;)), spow (n, div (k, &quot;2&quot;)));
 
 }
 
@@ -1292,7 +1292,7 @@ string slcm (string a, string b)
 
 {
 
-    return div (times (a, b), sgcd (a, b));
+    return div (tms (a, b), sgcd (a, b));
 
 } 
 
@@ -1300,7 +1300,7 @@ int operator += (string &amp;a, string b)
 
 {
 
-	string ans = plus (a, b);
+	string ans = add (a, b);
 
 	a = ans;
 
@@ -1312,7 +1312,7 @@ int operator -= (string &amp;a, string b)
 
 {
 
-	string ans = minus (a, b);
+	string ans = mns (a, b);
 
 	a = ans;
 
@@ -1324,7 +1324,7 @@ int operator *= (string &amp;a, string b)
 
 {
 
-	string ans = times (a, b);
+	string ans = tms (a, b);
 
 	a = ans;
 
@@ -1401,7 +1401,7 @@ struct str_frac
 
 		for (i = 0; c[i] != '/'; ++i) x[i] = c[i];
 
-		for (j = i + 1; j &lt; c.size (); ++j) y[j] = c[j];
+		for (j = i + 1; c[j] != '\0'; ++j) y[j] = c[j];
 
 		numerator = x;
 
@@ -1422,6 +1422,98 @@ struct str_frac
 	}
 
 };
+
+int str_reduc_com (str_frac &amp;a, str_frac &amp;b) 
+
+{
+	
+	string temp = slcm (a.denominator, b.denominator);
+	
+	a.numerator = tms (a.numerator, div (temp, a.denominator));
+	
+	b.numerator = tms (b.numerator, div (temp, a.denominator));
+	
+	a.denominator = b.denominator = temp;
+	
+	return 1;
+	
+}
+
+str_frac operator + (str_frac a, str_frac b)
+
+{
+	
+	str_frac ans;
+	
+	str_reduc_com (a, b);
+	
+	ans.denominator = a.denominator;
+	
+	ans.numerator = add (a.numerator, b.numerator);
+	
+	ans.reduc_frac ();
+	
+	return ans;
+	
+}
+
+str_frac operator - (str_frac a, str_frac b) 
+
+{
+	
+	str_frac ans;
+	
+	str_reduc_com (a, b);
+	
+	ans.denominator = a.denominator;
+	
+	ans.numerator = mns (a.numerator, b.numerator);
+	
+	ans.reduc_frac ();
+	
+	return ans;
+	
+}
+
+str_frac operator * (str_frac a, str_frac b) 
+
+{
+	
+	str_frac ans;
+	
+	ans.denominator = tms (a.denominator, b.denominator);
+	
+	ans.numerator = tms (a.numerator, b.numerator);
+	
+	ans.reduc_frac ();
+	
+	return ans;
+	
+}
+
+str_frac operator / (str_frac a, str_frac b) 
+
+{
+	
+	sswap (b.denominator, b.numerator);
+	
+	return a * b;
+
+}
+
+str_frac operator ^ (str_frac n, string k)
+
+{
+
+	str_frac ans;
+
+	ans.numerator = spow (n.numerator, k);
+
+	ans.denominator = spow (n.denominator, k);
+
+	return ans;
+
+}
 
 
 #endif
@@ -1651,7 +1743,7 @@ struct str_frac
             </div>
             <div class="postinfo-detail">
                 <div class="postdate"><i class="fa fa-calendar"></i>2020-08-18</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 15 min read</div>
+                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 16 min read</div>
                 <div class="posttag">
                     
                     <a href="https://fanwujiu.github.io/9hyafVghS/" class="postlink">
@@ -1686,8 +1778,7 @@ E-mail: 2335979273@qq.com
 #ifndef MMATH
 #define MMATH
 
-#include &lt;math.h&gt;
-#include &lt;stdarg.h&gt;
+#include &lt;cmath&gt;
 #include &lt;string&gt;
 
 using std::string;
@@ -1706,23 +1797,13 @@ inline void cswap (int a, int b)
 }
 int gcd (int n, int k) //最大公约数 
 {
-	return k == 0 ? n : gcd (k, (n % k));
+	return !k ? n : gcd (k, (n % k));
 }
 int lcm (int n, int k) //最小公倍数 
 {
-	return n * k / gcd (n, k);
+	return n / gcd (n, k) * k;
 }
-inline int power (int base, int pow) //快速幂 
-{
-    int result = 1;
-    while (pow &gt; 0) 
-	{
-        if (pow &amp; 1) result = result * base;
-        pow &gt;&gt;= 1;
-        base = base * base;
-    }
-    return result;
-}
+
 //分数结构体 
 struct frac
 {
@@ -2060,8 +2141,11 @@ struct str_frac
 </code></pre>
 <!-- more -->
 <p>以下代码可能引起极度舒适，请谨慎食用。</p>
+<p><strong>Update Feb. 16, 2021: 加入了str_frac类型的所有操作，优化gcd()和lcm()，全局函数优化</strong></p>
 <pre><code class="language-cpp">#ifndef MMATH
+
 #define MMATH
+
 
 
 #include &lt;cmath&gt;
@@ -2093,6 +2177,14 @@ inline void cswap (int a, int b)
 {
 	
 	int t = a; a = b; b = t;
+	
+}
+
+inline void sswap (string a, string b)
+
+{
+	
+	string t = a; a = b; b = t;
 	
 }
 
@@ -2203,7 +2295,7 @@ struct frac
 		
 		for (i = 0; c[i] != '/'; ++i) x = x * 10 + (c[i] - '0');
 		
-		for (j = i + 1; j &lt; c.size (); ++j) y = y * 10 + (c[j] - '0');
+		for (j = i + 1; c[j] != '\0'; ++j) y = y * 10 + (c[j] - '0');
 		
 		numerator = x; denominator = y;
 		
@@ -2215,7 +2307,7 @@ struct frac
 	
 	{
 		
-		double ans = numerator / denominator;
+		double ans = numerator / (denominator * 1.0);
 		
 		return ans;
 		
@@ -2235,7 +2327,7 @@ struct frac
 	
 };
 
-int reduc_com (frac a, frac b) 
+int reduc_com (frac &amp;a, frac &amp;b) 
 
 {
 	
@@ -2333,7 +2425,7 @@ frac operator ^ (frac n, int k)
 
 
 
-string plus (string a, string b) 
+string add (string a, string b) 
 
 {
 
@@ -2367,7 +2459,7 @@ string plus (string a, string b)
 
 }
 
-string minus (string a, string b) 
+string mns (string a, string b) 
 
 {
 
@@ -2457,7 +2549,7 @@ string minus (string a, string b)
 
 }
 
-string times (string a, string b) 
+string tms (string a, string b) 
 
 {
 
@@ -2495,7 +2587,7 @@ string times (string a, string b)
 
         }
 
-        str = plus (str, tempstr);
+        str = add (str, tempstr);
 
     }
 
@@ -2523,7 +2615,7 @@ string div (string a, string b)
 
         {
 
-            string t = minus (A, b);
+            string t = mns (A, b);
 
             if (t &gt;= &quot;0&quot;)
 
@@ -2569,7 +2661,7 @@ string mod (string a, string b)
 
         {
 
-            string t = minus (A, b);
+            string t = mns (A, b);
 
             if (t &gt;= &quot;0&quot;)
 
@@ -2603,9 +2695,9 @@ string spow (string n, string k)
 
     if (k == &quot;0&quot;) return &quot;1&quot;;
 
-    else if (mod (k, &quot;2&quot;) == &quot;1&quot;) return times (n, spow (n, minus (k, &quot;1&quot;)));
+    else if (mod (k, &quot;2&quot;) == &quot;1&quot;) return tms (n, spow (n, mns (k, &quot;1&quot;)));
 
-    else return times (spow (n, div (k, &quot;2&quot;)), spow (n, div (k, &quot;2&quot;)));
+    else return tms (spow (n, div (k, &quot;2&quot;)), spow (n, div (k, &quot;2&quot;)));
 
 }
 
@@ -2653,7 +2745,7 @@ string slcm (string a, string b)
 
 {
 
-    return div (times (a, b), sgcd (a, b));
+    return div (tms (a, b), sgcd (a, b));
 
 } 
 
@@ -2661,7 +2753,7 @@ int operator += (string &amp;a, string b)
 
 {
 
-	string ans = plus (a, b);
+	string ans = add (a, b);
 
 	a = ans;
 
@@ -2673,7 +2765,7 @@ int operator -= (string &amp;a, string b)
 
 {
 
-	string ans = minus (a, b);
+	string ans = mns (a, b);
 
 	a = ans;
 
@@ -2685,7 +2777,7 @@ int operator *= (string &amp;a, string b)
 
 {
 
-	string ans = times (a, b);
+	string ans = tms (a, b);
 
 	a = ans;
 
@@ -2762,7 +2854,7 @@ struct str_frac
 
 		for (i = 0; c[i] != '/'; ++i) x[i] = c[i];
 
-		for (j = i + 1; j &lt; c.size (); ++j) y[j] = c[j];
+		for (j = i + 1; c[j] != '\0'; ++j) y[j] = c[j];
 
 		numerator = x;
 
@@ -2783,6 +2875,98 @@ struct str_frac
 	}
 
 };
+
+int str_reduc_com (str_frac &amp;a, str_frac &amp;b) 
+
+{
+	
+	string temp = slcm (a.denominator, b.denominator);
+	
+	a.numerator = tms (a.numerator, div (temp, a.denominator));
+	
+	b.numerator = tms (b.numerator, div (temp, a.denominator));
+	
+	a.denominator = b.denominator = temp;
+	
+	return 1;
+	
+}
+
+str_frac operator + (str_frac a, str_frac b)
+
+{
+	
+	str_frac ans;
+	
+	str_reduc_com (a, b);
+	
+	ans.denominator = a.denominator;
+	
+	ans.numerator = add (a.numerator, b.numerator);
+	
+	ans.reduc_frac ();
+	
+	return ans;
+	
+}
+
+str_frac operator - (str_frac a, str_frac b) 
+
+{
+	
+	str_frac ans;
+	
+	str_reduc_com (a, b);
+	
+	ans.denominator = a.denominator;
+	
+	ans.numerator = mns (a.numerator, b.numerator);
+	
+	ans.reduc_frac ();
+	
+	return ans;
+	
+}
+
+str_frac operator * (str_frac a, str_frac b) 
+
+{
+	
+	str_frac ans;
+	
+	ans.denominator = tms (a.denominator, b.denominator);
+	
+	ans.numerator = tms (a.numerator, b.numerator);
+	
+	ans.reduc_frac ();
+	
+	return ans;
+	
+}
+
+str_frac operator / (str_frac a, str_frac b) 
+
+{
+	
+	sswap (b.denominator, b.numerator);
+	
+	return a * b;
+
+}
+
+str_frac operator ^ (str_frac n, string k)
+
+{
+
+	str_frac ans;
+
+	ans.numerator = spow (n.numerator, k);
+
+	ans.denominator = spow (n.denominator, k);
+
+	return ans;
+
+}
 
 
 #endif
